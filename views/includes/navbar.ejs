@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg bg-body-light sticky-top border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings">Hunger</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a><% if(currUser){ %>
+        <a class="nav-link" href="/listings/new">New Dish</a> <% } %>
+      </div>
+      <div class="navbar-nav" style="margin-left: auto !important">
+        <div class="s-div">
+          <form
+            class="d-flex"
+            role="search"
+            method="get"
+            action="/listings/search"
+          >
+            <input
+              class="form-control signupLogin-form me-2 s-input"
+              type="search"
+              name="q"
+              placeholder="Search for a dish"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success s-btn" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>&nbsp;
+              <span class="search-text">Search</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="navbar-nav" style="margin-left: auto !important">
+        <% if(!currUser){ %>
+        <a class="nav-link" href="/signup"><b>Signup</b></a>
+        <a class="nav-link" href="/login"><b>Login</b></a>
+        <% } %> <% if(currUser){ %>
+        <a class="nav-link" href="/cart"
+          ><i class="fa-brands fa-opencart"></i>&nbsp; cart</a
+        >
+        <a class="nav-link" href="/logout"><b>Logout</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

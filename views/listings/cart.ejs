@@ -1,0 +1,99 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="carts">
+  <% for(let cart of carts){ %> <% if(currUser &&
+  currUser._id.equals(cart.user._id)){ %>
+  <a
+    href="/listings/<%= cart.listingId %>"
+    style="text-decoration: none !important"
+  >
+    <div class="card cart-card mb-3">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="<%= cart.image%>"
+            class="img-fluid rounded-start"
+            alt="cart_Image"
+          />
+        </div>
+        <div class="col-md-8" style="display: flex">
+          <div class="card-body cart-body">
+            <h5 class="card-title"><b><%= cart.title %></b></h5>
+            <p class="card-text">
+              <%= cart.description %> <br />
+              <b>Quantity : <%= cart.quantity %></b>
+            </p>
+            <p class="card-text">
+              &#8377;&nbsp;<%= cart.price.toLocaleString("en-IN") %>
+            </p>
+          </div>
+          <div class="card-body cart-body">
+            <form method="post" action="/cart/<%= cart._id %>?_method=DELETE">
+              <button class="btn btn-danger btn-sm">Remove</button>
+            </form>
+            <br /><br /><br /><br /><br />
+            <br />
+            <p class="card-text">
+              <% if(cart.category == "veg"){%>
+              <img
+                src="https://i.pinimg.com/736x/e4/1f/f3/e41ff3b10a26b097602560180fb91a62.jpg"
+                alt=""
+                width="40px"
+                height="40px"
+              />
+              <%}else{ %>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Non_veg_symbol.svg/2048px-Non_veg_symbol.svg.png"
+                alt=""
+                width="50px"
+                height="50px"
+              />
+              <% } %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+  <% } %> <% } %>
+</div>
+
+<div class="responsive-card">
+  <% for(let cart of carts){ %> <% if(currUser &&
+  currUser._id.equals(cart.user._id)){ %>
+  <div class="card mt-4 mb-4" style="border: none !important">
+    <img src="<%= cart.image%>" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title mt-3"><b><%= cart.title%></b></h5>
+      <p class="card-text">
+        <%= cart.description%> <br /><br />
+        &#8377;&nbsp;<%= cart.price.toLocaleString("en-IN") %><br /><br />
+        <b>Quantity : <%= cart.quantity %></b>
+        <% if(cart.category == "veg"){%>
+        <img
+          src="https://i.pinimg.com/736x/e4/1f/f3/e41ff3b10a26b097602560180fb91a62.jpg"
+          alt=""
+          width="20px"
+          height="20px"
+          class="mb-3"
+          style="margin-left: 16rem !important"
+        />
+        <%}else{ %>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Non_veg_symbol.svg/2048px-Non_veg_symbol.svg.png"
+          alt=""
+          width="20px"
+          height="20px"
+          class="mb-3"
+          style="margin-left: 16rem !important"
+        />
+        <% } %>
+      </p>
+      <form method="post" action="/cart/<%= cart._id %>?_method=DELETE">
+        <button class="btn btn-danger btn-sm">Remove</button>
+      </form>
+    </div>
+  </div>
+  <hr />
+  <% } %> <% } %>
+</div>

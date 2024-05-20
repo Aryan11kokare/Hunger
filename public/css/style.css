@@ -1,0 +1,323 @@
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
+}
+
+.container {
+  flex: 1;
+}
+
+/* navbar */
+.navbar {
+  height: 5rem !important;
+  background-color: white !important;
+}
+
+.navbar-brand {
+  font-size: 2rem !important;
+  font-weight: 900 !important;
+}
+
+.a-link {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.nav-link {
+  color: rgb(54, 54, 54) !important;
+}
+
+.nav-link:hover {
+  color: black !important;
+  text-decoration: underline !important;
+}
+
+.s-btn {
+  background-color: rgb(255, 157, 0) !important;
+  color: white !important;
+  border: none !important;
+  border-top-right-radius: 3rem !important;
+  border-bottom-right-radius: 3rem !important;
+  font-size: 1.1rem !important;
+}
+
+.s-input {
+  width: 18rem !important;
+  border-top-left-radius: 3rem !important;
+  border-bottom-left-radius: 3rem !important;
+  text-align: center !important;
+  align-items: center !important;
+  padding: 0.4rem !important;
+  font-size: 1.1rem !important;
+}
+
+/* footer */
+.footer {
+  height: 10rem;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.footer-media,
+.footer-comp,
+.footer-links {
+  width: 100%;
+}
+
+.footer-media {
+  font-size: 1.5rem;
+}
+
+.footer-links a {
+  text-decoration: none !important;
+  color: rgb(120, 119, 119) !important;
+}
+
+.footer-links a:hover {
+  text-decoration: underline !important;
+  color: white !important;
+}
+
+/* listing-card */
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem !important;
+}
+
+.card-img-top {
+  height: 17rem !important;
+  border-radius: 1rem !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.card-text {
+  color: black !important;
+}
+
+/* show-page */
+.listing-title {
+  color: black !important;
+}
+
+.show-text {
+  font-size: 1.2rem !important;
+  color: #000 !important;
+}
+
+.listing-btns {
+  display: flex;
+}
+
+.edit-btn {
+  background-color: rgb(255, 157, 0) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.delete-btn {
+  background-color: black !important;
+  color: white !important;
+  border: none !important;
+}
+
+/* review-card */
+.review-card {
+  margin-left: 1rem !important;
+  margin-bottom: 1rem !important;
+  width: 50vh !important;
+  border: none !important;
+  background-color: #efefef;
+  padding: 0.5rem !important;
+}
+
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* form-authintication */
+.border {
+  border: 1px solid lightgray !important;
+  padding: 1rem !important;
+  border-radius: 1rem !important;
+}
+
+/* add to cart */
+.carts {
+  display: inline-block !important;
+}
+
+.responsive-card {
+  display: none !important;
+}
+
+.cart-card {
+  height: 15rem !important;
+  border: none !important;
+  width: 60rem !important;
+  margin-top: 2rem !important;
+  margin-left: 2rem !important;
+}
+
+.img-fluid {
+  height: 15rem !important;
+  width: 100% !important;
+  border-radius: 1rem !important;
+  object-fit: cover !important;
+}
+
+.cart-body {
+  padding: 1rem !important;
+}
+
+/* bookmark */
+
+.c-input {
+  width: 8rem !important;
+  border-radius: 0.3rem !important;
+  border: 1px solid lightgray !important;
+  text-align: center !important ;
+  align-items: center !important;
+}
+
+.b-btn {
+  margin-left: 25rem !important;
+}
+
+/* filters */
+.f-div {
+  background-color: white;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  height: 50vh;
+}
+
+.filters {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-color: #6e6e6e white;
+  scrollbar-width: thin;
+  margin-top: 1rem;
+}
+
+.filters a {
+  text-decoration: none !important;
+}
+
+.filter {
+  text-align: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-right: 2.5rem;
+  cursor: pointer;
+}
+
+.f-image {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.f-image-inner {
+  object-fit: cover !important;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.f-text {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;
+  color: rgb(54, 54, 54);
+}
+
+.f-heading {
+  font-weight: 600;
+  color: #000;
+}
+
+/* option */
+#category {
+  border: 1px solid #dcdcdc !important;
+  width: 75vh !important;
+  padding: 0.4rem !important;
+  border-radius: 0.4rem !important;
+}
+
+@media (max-width: 500px) {
+  .f-div {
+    margin-bottom: 0 !important;
+  }
+  .s-input {
+    border: none !important;
+  }
+  .s-btn {
+    border: none !important;
+    background-color: white !important;
+    color: #000 !important;
+  }
+  .search-text {
+    display: none !important;
+  }
+  .s-div {
+    border: 1px solid #6e6e6e;
+    border-radius: 5rem !important;
+  }
+  .b-btn {
+    margin-left: 0 !important;
+    margin-top: 1rem !important;
+  }
+  #category,
+  .form-control {
+    width: 21rem !important;
+  }
+  .signupLogin-form {
+    width: 19rem !important;
+  }
+  .navbar-collapse {
+    background-color: white !important;
+    color: #000 !important;
+    font-weight: bold !important;
+  }
+  .border {
+    width: 22rem !important;
+    margin-top: 2rem !important;
+    margin-left: 1.5rem !important;
+  }
+  .card-a {
+    margin-top: -7rem !important;
+  }
+  .carts {
+    display: none !important;
+  }
+  .responsive-card {
+    display: inline !important;
+  }
+  .show-card {
+    width: 23rem !important;
+    margin-left: 1.5rem !important;
+    margin-top: 1rem !important;
+  }
+  .form-queriy {
+    width: 22rem !important;
+    margin-left: 1.5rem !important;
+    margin-top: 1rem !important;
+  }
+  .b-btn {
+    margin-left: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
