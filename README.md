@@ -1,4 +1,4 @@
-<b style="color:orange;">Hunger<b> <br/>
+<h2> Hunger<h2> <br/>
 <hr/>
 ● Online food delivery and ordering platform <br/>
 ● Technology : Html , Css , Javascript ,Bootstrap ,Node js, Express js, Ejs templating , Mongodb <br/>
