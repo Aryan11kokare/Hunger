@@ -21,7 +21,7 @@ const reviews = require("./routes/review.js");
 const users = require("./routes/user.js");
 const carts = require("./routes/cart.js");
 
-const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = process.env.MONGO_ATLAS_URL;
 
 main()
   .then(() => {
@@ -36,9 +36,10 @@ async function main() {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "/public")));
-app.engine("ejs", ejsMate);
 app.use(methodOverride("_method"));
+app.engine("ejs", ejsMate);
+app.use(express.static("uploads"));
+app.use(express.static(path.join(__dirname, "/public")));
 
 const store = MongoStore.create({
   mongoUrl: dbUrl,

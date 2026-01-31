@@ -5,8 +5,17 @@ const ExpressError = require("../utils/ExpressError.js");
 const { listingSchema } = require("../schema.js");
 const { isLoggedIn, isOwner } = require("../middelware.js");
 const multer = require("multer");
-const { storage } = require("../cloudConfig.js");
-const upload = multer({ storage });
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+
+let upload = multer({ storage: storage });
 
 const listingControllers = require("../controllers/listing.js");
 
@@ -27,7 +36,7 @@ router
     isLoggedIn,
     upload.single("listing[image]"),
     validateListing,
-    wrapAsync(listingControllers.create)
+    wrapAsync(listingControllers.create),
   );
 
 //search route
@@ -43,7 +52,7 @@ router
     isLoggedIn,
     upload.single("listing[image]"),
     validateListing,
-    wrapAsync(listingControllers.update)
+    wrapAsync(listingControllers.update),
   )
   .delete(isLoggedIn, isOwner, wrapAsync(listingControllers.delete));
 
@@ -52,7 +61,7 @@ router.get(
   "/:id/edit",
   isLoggedIn,
   isOwner,
-  wrapAsync(listingControllers.edit)
+  wrapAsync(listingControllers.edit),
 );
 
 module.exports = router;

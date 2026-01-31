@@ -13,7 +13,6 @@ module.exports.createUser = async (req, res, next) => {
       email,
     });
     const registerUser = await User.register(newUser, password);
-    console.log(registerUser);
     req.login(registerUser, (err) => {
       if (err) {
         return next();
